@@ -1,0 +1,73 @@
+{
+	"name": "yhht-ui",
+	"displayName": "yhht-ui",
+	"description": "yhht-ui",
+	"publisher": "yhht-ui",
+	"version": "0.1.2",
+	"icon": "images/logo.png",
+	"engines": {
+		"vscode": "^1.67.0"
+	},
+	"author": {
+		"name": "daidai"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:vue",
+		"onCommand:yhht-ui.helloWorld"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "yhht-ui.helloWorld",
+				"title": "Hello World"
+			}
+		],
+		"snippets": [
+			{
+				"language": "vue",
+				"path": "./out/yhht-ui-json/yhht-ui.json"
+			},
+			{
+				"language": "html",
+				"path": "./out/yhht-ui-json/yhht-ui.json"
+			},
+			{
+				"language": "vue-html",
+				"path": "./out/yhht-ui-json/yhht-ui.json"
+			},
+			{
+				"language": "javascript",
+				"path": "./out/yhht-ui-json/yhht-ui.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/daidaibg/yhht-ui-snippets.git"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.67.0",
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.1",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^5.21.0",
+		"@typescript-eslint/parser": "^5.21.0",
+		"eslint": "^8.14.0",
+		"glob": "^8.0.1",
+		"mocha": "^9.2.2",
+		"typescript": "^4.6.4",
+		"@vscode/test-electron": "^2.1.3"
+	}
+}
