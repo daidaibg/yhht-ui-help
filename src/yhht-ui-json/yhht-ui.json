@@ -1,0 +1,70 @@
+{
+    "Basic: Button": {
+        "prefix": "yhbutton",
+        "body": [
+            "<yh-button theme=\"${1|default,danger,warning,success|}\" size=\"${2|medium,small,medium,large|}\" >${4}</yh-button>",
+            "${5}"
+        ],
+        "description": "Yhht UI 按钮<yh-button>"
+    },
+    "Basic: Drag": {
+        "prefix": "yhdrag",
+        "body": [
+            "<yh-drag :visible.sync=\"${1|true,true,false|}\" title=\"弹窗\" showClose model :borderRadius=\"${2|10}\" titleAlign=\"${3|center}\">${4}</yh-drag>"
+        ],
+        "description": "Yhht UI 拖拽弹窗<yh-drag>"
+    },
+    "Basic: upload img": {
+        "prefix": "yhuploadimg",
+        "body": [
+            "   <yh-upload-img",
+            "    action=\"--\"",
+            "    autoUpload",
+            "    :headers=\"{ token: '' }\"",
+            "    @deleteFile=\"(file)=>{}\"",
+            "    @imageViewer=\"(file)=>{}\"",
+            "    onSuccess=\"(file)=>{}\"",
+            "    :fileList=\"[]\"",
+            "    :fileOption=\"{ id: 'id',url: 'filePath',}\"",
+            "    multiple",
+            "></yh-upload-img>"
+        ],
+        "description": "Yhht UI 获取坐标<yh-upload-img>"
+    },
+    "Basic: coordinate": {
+        "prefix": "yhcoordinate",
+        "body": [
+            "   <yh-coordinate",
+            "    @close=\"close\"",
+            "    ref=\"yhxy_ref\"",
+            "    @searchMessage=\"searchMessage\"",
+            "    @locationMessage=\"locationMessage\"",
+            "></yh-coordinate>",
+            "${5}"
+        ],
+        "description": "Yhht UI 获取坐标<yh-coordinate>"
+    },
+    "Basic: coordinate JS": {
+        "prefix": "yhcoordinatejs",
+        "body": [
+            "this.GetXY = GetCoordinate({",
+            "   // lat: y, //y坐标",
+            "   // lng: x, //x坐标" ,
+            "   searchHide: false, //隐藏搜索框",
+            "   //定位回传消息，因谷歌安全策略，非安全地址无法获取浏览器定位",
+            "   locationMessage: (res) => { ",
+            "     console.log(\"locationMessage\", res);",
+            "   },",
+            "   //有搜索框的时候用户搜索会触发",
+            "   searchMessage: (res) => {",
+            "      console.log(\"searchMessage\", res);",
+            "   },",
+            "   //xy坐标，isClickOk true代表点击确定按钮",
+            "    close: (xy,isClickOk) => {",
+            "     console.log(xy,isClickOk);",
+            "    },",
+            "  });"
+        ],
+        "description": "Yhht UI 获取坐标 JS"
+    }
+}
